@@ -1,4 +1,3 @@
-// A simple time of day class Ravago Jones 3/7/19 V1.1
 var Time = /** @class */ (function () {
     function Time(hour, minute) {
         // assign to public variables
