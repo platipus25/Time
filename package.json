@@ -1,5 +1,5 @@
 {
-  "name": "Time",
+  "name": "time-typescript",
   "version": "1.0.0",
   "description": "A simple time of day class written in typescript",
   "main": "index.js",
