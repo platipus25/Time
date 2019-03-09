@@ -1,0 +1,15 @@
+{
+  "name": "Time",
+  "version": "1.0.0",
+  "description": "A simple time of day class written in typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["time", "date", "typescript"],
+  "author": "platipus25",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
