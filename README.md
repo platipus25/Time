@@ -2,7 +2,7 @@
 ### A simple time of day class written in typescript
 
 It includes methods for converting to:
- - js builting `Date` class
+ - js builtin `Date` class
  - string
  - and a format to use when comparing two `Time`s (ex. 10:20 ==> 1020)
 
