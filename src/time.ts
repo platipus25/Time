@@ -18,9 +18,9 @@ class Time {
         return new Time(ts.hour, ts.minute)
     }
 
-    toDate(){
+    toDate(date: Date = new Date()){
         // get new date, set hour, then sed minute
-        return new Date(new Date((new Date()).setHours(this.hour)).setMinutes(this.minute))
+        return new Date(new Date((date).setHours(this.hour)).setMinutes(this.minute))
     }
 
     toString(){
