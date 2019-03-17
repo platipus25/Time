@@ -1,6 +1,6 @@
 {
   "name": "time_ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple time of day class written in typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
