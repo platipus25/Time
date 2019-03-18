@@ -21,13 +21,17 @@ class Time {
     }
 
     toDate(date: Date = new Date()){
-        // get new date, set hour, then sed minute
+        // get new date, set hour, then set minute, then set second
         return new Date(new Date(new Date((date).setHours(this.hour)).setMinutes(this.minute)).setSeconds(this.second))
     }
 
     toString(){
         let hour = (this.hour > 12? this.hour-12: this.hour) // make 12-hour
-        return `${hour}:${this.minute < 10? "0"+this.minute: this.minute}:${this.second < 10? "0"+this.second: this.second}`
+        return `${hour}:${this.minute < 10? "0"+this.minute: this.minute}`
+    }
+
+    toStringSeconds(){
+        return `${this.toString()}:${this.second < 10? "0"+this.second: this.second}`
     }
 
     toCompare(){
