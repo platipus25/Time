@@ -1,19 +1,26 @@
 
 class Time {
+    year: number | null;
+    month: number | null;
+    day: number | null;
+
     hour:number;
     minute:number;
     second: number;
-    constructor(hour: number, minute: number, second: number | undefined = 0){
+    constructor(hour: number, minute: number, second: number | undefined = 0, year: number | null = null, month: number | null = null, day: number | null = null){
         // assign to public variables
         this.hour = hour
         this.minute = minute
         this.second = second | 0
+        this.year = year
+        this.month = month
+        this.day = day
         //console.log(`${hour}:${minute}`)
     }
 
     static fromDate(date: Date){
         // parse date
-        return new Time(date.getHours(), date.getMinutes(), date.getSeconds())
+        return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getFullYear(), date.getMonth(), date.getDate())
     }
 
     static fromTs(ts: {hour: number, minute: number, second: number | undefined}){
@@ -21,8 +28,15 @@ class Time {
     }
 
     toDate(date: Date = new Date()){
+        // internal date first & internal time only
+        let year = this.year? new Date(date.setFullYear(this.year)): date
+        let month = this.month? new Date(year.setMonth(this.month)): year
+        let day = this.day? new Date(month.setDate(this.day)): month
+        let hour = new Date(day.setHours(this.hour))
+        let minute = new Date(hour.setMinutes(this.minute))
+        let second = new Date(minute.setSeconds(this.second))
         // get new date, set hour, then set minute, then set second
-        return new Date(new Date(new Date((date).setHours(this.hour)).setMinutes(this.minute)).setSeconds(this.second))
+        return second
     }
 
     toString(){
