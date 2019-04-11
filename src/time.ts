@@ -20,11 +20,17 @@ class Time {
 
     static fromDate(date: Date){
         // parse date
-        return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getFullYear(), date.getMonth(), date.getDate())
+        return new Time(date.getHours(), date.getMinutes(), date.getSeconds())
     }
 
     static fromTs(ts: {hour: number, minute: number, second: number | undefined}){
         return new Time(ts.hour, ts.minute, ts.second)
+    }
+
+    setDate(date: Date) {
+        this.year = date.getFullYear()
+        this.month = date.getMonth()
+        this.day = date.getDate()
     }
 
     toDate(date: Date = new Date()){
