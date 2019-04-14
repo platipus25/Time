@@ -28,9 +28,7 @@ class Time {
     }
 
     setDate(date: Date) {
-        this.year = date.getFullYear()
-        this.month = date.getMonth()
-        this.day = date.getDate()
+        return new Time(this.hour, this.minute, this.second, date.getFullYear(), date.getMonth(), date.getDate())
     }
 
     toDate(date: Date = new Date()){
