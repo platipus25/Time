@@ -21,9 +21,7 @@ var Time = /** @class */ (function () {
         return new Time(ts.hour, ts.minute, ts.second);
     };
     Time.prototype.setDate = function (date) {
-        this.year = date.getFullYear();
-        this.month = date.getMonth();
-        this.day = date.getDate();
+        return new Time(this.hour, this.minute, this.second, date.getFullYear(), date.getMonth(), date.getDate());
     };
     Time.prototype.toDate = function (date) {
         if (date === void 0) { date = new Date(); }
