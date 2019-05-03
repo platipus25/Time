@@ -15,7 +15,7 @@ var Time = /** @class */ (function () {
     }
     Time.fromDate = function (date) {
         // parse date
-        return new Time(date.getHours(), date.getMinutes(), date.getSeconds());
+        return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getFullYear(), date.getMonth(), date.getDate());
     };
     Time.fromTs = function (ts) {
         return new Time(ts.hour, ts.minute, ts.second);
