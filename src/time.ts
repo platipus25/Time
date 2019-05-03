@@ -20,7 +20,7 @@ class Time {
 
     static fromDate(date: Date){
         // parse date
-        return new Time(date.getHours(), date.getMinutes(), date.getSeconds())
+        return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getFullYear(), date.getMonth(), date.getDate())
     }
 
     static fromTs(ts: {hour: number, minute: number, second: number | undefined}){
