@@ -16,6 +16,6 @@ declare class Time {
     toDate(date?: Date): Date;
     toString(): string;
     toStringSeconds(): string;
-    toCompare(): number;
+    toMs(date?: Date): number;
 }
 export default Time;

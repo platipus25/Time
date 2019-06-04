@@ -42,8 +42,9 @@ var Time = /** @class */ (function () {
     Time.prototype.toStringSeconds = function () {
         return this.toString() + ":" + (this.second < 10 ? "0" + this.second : this.second);
     };
-    Time.prototype.toCompare = function () {
-        return (this.hour * 100) + this.minute + (this.second * 0.01); // concatenate & add zero if neccecary
+    Time.prototype.toMs = function (date) {
+        if (date === void 0) { date = new Date(); }
+        return new Date(this.toDate(date)).valueOf();
     };
     return Time;
 }());

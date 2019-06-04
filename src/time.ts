@@ -52,8 +52,8 @@ class Time {
         return `${this.toString()}:${this.second < 10? "0"+this.second: this.second}`
     }
 
-    toCompare(){
-        return (this.hour*100)+this.minute+(this.second*0.01) // concatenate & add zero if neccecary
+    toMs(date: Date = new Date()){
+        return new Date(this.toDate(date)).valueOf()
     }
 
 }
