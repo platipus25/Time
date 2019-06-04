@@ -31,7 +31,8 @@ class Time {
         return new Time(this.hour, this.minute, this.second, date.getFullYear(), date.getMonth(), date.getDate())
     }
 
-    toDate(date: Date = new Date()){
+    toDate(now: Date = new Date()){
+        let date = new Date(now)
         // internal date first & internal time only
         let year = this.year? new Date(date.setFullYear(this.year)): date
         let month = this.month? new Date(year.setMonth(this.month)): year

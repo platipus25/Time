@@ -23,8 +23,9 @@ var Time = /** @class */ (function () {
     Time.prototype.setDate = function (date) {
         return new Time(this.hour, this.minute, this.second, date.getFullYear(), date.getMonth(), date.getDate());
     };
-    Time.prototype.toDate = function (date) {
-        if (date === void 0) { date = new Date(); }
+    Time.prototype.toDate = function (now) {
+        if (now === void 0) { now = new Date(); }
+        var date = new Date(now);
         // internal date first & internal time only
         var year = this.year ? new Date(date.setFullYear(this.year)) : date;
         var month = this.month ? new Date(year.setMonth(this.month)) : year;

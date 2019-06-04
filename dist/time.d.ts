@@ -13,7 +13,7 @@ declare class Time {
         second: number | undefined;
     }): Time;
     setDate(date: Date): Time;
-    toDate(date?: Date): Date;
+    toDate(now?: Date): Date;
     toString(): string;
     toStringSeconds(): string;
     toMs(date?: Date): number;
